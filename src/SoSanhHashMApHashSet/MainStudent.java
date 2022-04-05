@@ -8,9 +8,9 @@ import java.util.Set;
 public class MainStudent {
     public static void main(String[] args) {
         Student student1 = new Student("Thành",19,"PT");
-        Student student2 = new Student("Mạnh",20,"HN");
-        Student student3 = new Student("Nhung",19,"HN");
-        Student student4 = new Student("Hoàng",21,"HP");
+        Student student2 = new Student("Mạnh",22,"HN");
+        Student student3 = new Student("Nhung",21,"HN");
+        Student student4 = new Student("Anh",20,"HP");
         Map<Integer,Student> MApStudent = new HashMap<Integer,Student>();
         MApStudent.put(1,student1);
         MApStudent.put(2,student2);
@@ -23,12 +23,12 @@ public class MainStudent {
         }
 //        sắp xếp theo thứ tự random
         System.out.println("---------set");
-        Set<Student> stundents = new HashSet<Student>();
-        stundents.add(student1);
-        stundents.add(student2);
-        stundents.add(student3);
-        stundents.add(student4);
-        for (Student student : stundents
+        Set<Student> students = new HashSet<Student>();
+        students.add(student1);
+        students.add(student2);
+        students.add(student3);
+        students.add(student4);
+        for (Student student : students
              ) {
             System.out.println(student.toString());
 

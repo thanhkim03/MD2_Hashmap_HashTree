@@ -1,5 +1,8 @@
 package SoSanhHashMApHashSet;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Student {
     private String name;
     private int age;
@@ -7,39 +10,48 @@ public class Student {
 
     public Student() {
     }
-
     public Student(String name, int age, String address) {
         this.name = name;
         this.age = age;
         this.address = address;
     }
+    public static class Language extends Student {
+        private String language;
 
-    public String getName() {
-        return name;
-    }
+        public Language(String language) {
+            this.language = language;
+        }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+        public Language(String name, int age, String address, String language) {
+            super(name, age, address);
+            this.language = language;
+        }
 
-    public int getAge() {
-        return age;
-    }
+        public Language() {
+        }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+        @Override
+        public String toString() {
+            return "Language{" +
+                    "name='" + super.name + '\'' +
+                    ", age=" + super.age +
+                    ", address='" + super.address + '\'' +
+                    ", language='" + language + '\'' +
+                    '}';
+        }
 
-    public String getAddress() {
-        return address;
-    }
+        public static void main(String[] args) {
+            Student.Language sl1=new Student.Language("java");
+            Student.Language sl2=new Student.Language("c");
+            Student.Language sl3=new Student.Language("php");
+            Student.Language sl4=new Student.Language("c++");
+            Map<Integer, Student.Language> l1 = new HashMap<Integer,Student.Language>();
+            l1.put(1,sl1);
+            l1.put(2,sl2);
+            l1.put(3,sl3);
+            l1.put(4,sl4);
+            System.out.println("========="+"\n"+l1.get(3));
+        }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" + "name='" + name +", age=" + age + ", address='" + address + '}';
     }
 }
